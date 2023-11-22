@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            width: 100%;
+            height: 500px;
+        }
+        #slider{
+            width: 1000px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+            border: 10px solid white;
+            box-shadow: 0px 0px 5px 2px grey;
+        }
+        button{
+            padding: 20px;
+            border: none;
+            background-color: #37f;
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            top: 45%;
+        }
+        .next{
+            border-radius: 10px 0px 0px 10px;
+            margin-left: 950px;
+        }
+        .prev{
+            border-radius: 0px 10px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <div id="box">
+            <img src="assets1/d1.jpeg" alt="">
+            
+        </div>
+
+        <button class="prev" onclick="prevImage()"> - </button>
+        <button class="next" onclick="nextImage()"> + </button>
+
+    </div>
+
+
+<script type="text/javascript">
+    var slider_content=document.getElementById('box');
+
+    var image=['d1','d2','d3','d4','d5'];
+
+    var i=image.length;
+
+// buttons
+
+
+    function nextImage(){
+        if(i<image.length){
+            i=i+1;
+    }else{
+        i=1;
+    }
+    slider_content.innerHTML= "<img src="+"assets1/"+image[i-1]+".jpeg>";
+    }
+
+    function prevImage(){
+        if(i<image.length+1 && i>1){
+            i=i-1;
+    }else{
+        i=image.length;
+    }
+    slider_content.innerHTML= "<img src="+"assets1/"+image[i-1]+".jpeg>";
+    }
+
+
+</script>
+
+
+</body>
+</html>
